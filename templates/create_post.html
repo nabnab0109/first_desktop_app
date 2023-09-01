@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>投稿作成</title>
+</head>
+<body>
+    <h1>投稿作成</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }}
+            {{ form.title() }}
+        </div>
+        <div>
+            {{ form.content.label }}
+            {{ form.content() }}
+        </div>
+        <div>
+            {{ form.category.label }}
+            {{ form.category() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>

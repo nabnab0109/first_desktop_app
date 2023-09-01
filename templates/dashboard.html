@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ダッシュボード</title>
+</head>
+<body>
+    <h1>最新の投稿</h1>
+    <ul>
+        {% for post in latest_posts %}
+            <li><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>カテゴリー一覧</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

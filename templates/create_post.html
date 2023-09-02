@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>投稿作成</h1>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data"> <!-- enctype属性を追加 -->
         {{ form.hidden_tag() }}
         <div>
             {{ form.title.label }}
@@ -18,6 +18,22 @@
         <div>
             {{ form.category.label }}
             {{ form.category() }}
+        </div>
+        <div>
+            {{ form.sub_category.label }} <!-- 小カテゴリの追加 -->
+            {{ form.sub_category() }}
+        </div>
+        <div>
+            {{ form.link.label }} <!-- リンクの追加 -->
+            {{ form.link() }}
+        </div>
+        <div>
+            {{ form.attachment.label }} <!-- ファイルの添付 -->
+            {{ form.attachment() }}
+        </div>
+        <div>
+            {{ form.table_data.label }} <!-- 表の作成 -->
+            {{ form.table_data() }}
         </div>
         <div>
             {{ form.submit() }}

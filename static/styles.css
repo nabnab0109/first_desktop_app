@@ -1,29 +1,84 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  main {
-    padding: 1rem;
-  }
-  
-  .posts {
-    margin-top: 1rem;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+/* 検索バーと投稿作成ボタンのスタイリング */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.actions input[type="text"] {
+  width: 70%;
+}
+
+.actions input[type="submit"],
+.actions .create-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 最新の投稿とカテゴリー一覧のスタイリング */
+.posts, .categories {
+  margin-top: 1rem;
+}
+
+.posts ul, .categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.posts li, .categories li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.posts li:last-child,
+.categories li:last-child {
+  border-bottom: none;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* styles.css */
+/* ...既存のスタイル... */
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}

@@ -10,10 +10,47 @@
   <header>
     <h1>Welcome to My Web App</h1>
   </header>
+
+  <!-- ここに<nav>セクションを追加 -->
+   <nav>
+    <ul>
+       <li><a href="{{ url_for('create_post') }}">新規投稿作成</a></li>
+       <li><a href="{{ url_for('manage_categories') }}">カテゴリー管理</a></li>
+    </ul>
+  </nav>
+  
+
   <main>
+    <!-- 検索バーと投稿作成ボタン -->
+    <div class="actions">
+      <form method="GET" action="{{ url_for('dashboard') }}">
+        <input type="text" name="search" placeholder="Search posts">
+        <input type="submit" value="Search">
+      </form>
+      <a href="{{ url_for('create_post') }}" class="create-button">Create New Post</a>
+    </div>
+
+    <!-- 最新の投稿 -->
     <section class="posts">
       <h2>Latest Posts</h2>
-      <!-- Posts will be displayed here -->
+      <ul>
+        {% for post in latest_posts %}
+          <li>
+            <a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a>
+            <small>Posted on {{ post.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- カテゴリー一覧 -->
+    <section class="categories">
+      <h2>Categories</h2>
+      <ul>
+        {% for category in categories %}
+          <li>{{ category.name }}</li>
+        {% endfor %}
+      </ul>
     </section>
   </main>
   <footer>
